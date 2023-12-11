@@ -1,5 +1,5 @@
 ---
-title: Example Category
+title: Test Category
 description: Describe category
 image:
 
