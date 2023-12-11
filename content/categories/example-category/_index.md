@@ -1,5 +1,5 @@
 ---
-title: Test Category
+title: Test category
 description: Describe category
 image:
 
