@@ -8,9 +8,9 @@
 #newtab = true
 
 [[social]]
-identifier = "github"
-name = "GitHub"
-url = "https://github.com/CaiJimmy/hugo-theme-stack"
+identifier = "gitlab"
+name = "gitlab"
+url = "https://gitlab.com/rauner"
 
 [social.params]
 icon = "brand-github"
