@@ -1,10 +1,10 @@
 ---
-title: Buycycle
+title: Machine_Learning
 description: A description of this category
 image:
 
 # Badge style
 style:
-    background: "#21202e"
-    color: "#e0def4"
+    background: "#9ccfd8"
+    color: "#fff"
 ---

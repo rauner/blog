@@ -5,7 +5,7 @@ slug: recommendation
 date: 2023-12-11T21:10:00+07:00
 image: cover.png
 categories:
-    - Machine Learning
+    - Machine_Learning
     - Buycycle
 tags:
     - Personalization
