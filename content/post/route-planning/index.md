@@ -2,7 +2,7 @@
 title: Because it matters where you ride
 description: Discover the most helpful route planning tools for your cycling adventures.
 slug: route-planning
-date: 2022-03-18T21:10:00+07:00
+date: 2023-12-11T21:10:00+07:00
 image: cover.webp
 categories:
     - Cycling
