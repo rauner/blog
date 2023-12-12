@@ -22,7 +22,7 @@ We will intentionally focus on opensource tools that provide the most customizat
 # OpenStreetMap
 
 <figure>
-  <img src="{{site.url}}/content/post/route-planning/image1.ipng" alt="my alt text"/>
+  <img src="{{site.url}}/content/post/route-planning/image1.png" alt="my alt text"/>
   <figcaption>This is my caption text.</figcaption>
 </figure>
 
