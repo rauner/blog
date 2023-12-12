@@ -2,7 +2,7 @@
 title: Because it matters where you ride
 description: Discover the most helpful route planning tools for your cycling adventures.
 slug: route-planning
-date: 2023-12-06
+date: 2022-03-18T21:10:00+07:00
 image: cover.webp
 categories:
     - Cycling
@@ -41,4 +41,3 @@ With several available plug-ins you can also connect your favorite weather app, 
 The app is free, but you have to pay extra for a few plugins. Fortunately, this is not absolutely necessary, as the free version already offers (almost) everything you need. Pro tip: The developers want to foster open source and give a free pro version when using the alternative app store F-Driod.
 OpenStreetMap, BRouter and osmAnd are all opensource projects. While their data base is huge and their opensource character makes them great free, democratic and tools that benefit us all, they can be a bit hard to navigate and use. So if you're looking for something a bit more user-experience oriented, these next suggestions might be just right for you!
 
-date: 2023-12-06 00:00:00+0000
