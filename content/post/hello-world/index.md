@@ -3,12 +3,10 @@ title: Test
 description: test
 slug: test
 date: 2023-03-06 00:00:00+0000
-image: cover.img
+image: cover.jpg
 categories:
-    - Cycling
-    - Open Source
+    - Example Category
 tags:
-    - Buycycle
 weight: 1
 ---
 ![Cycling Route](cover.png)

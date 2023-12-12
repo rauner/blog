@@ -6,10 +6,8 @@ date: 2023-12-11T21:10:00+07:00
 image: cover.png
 categories:
     - Cycling
-    - Open Source
+    - Open_Source
 tags:
-    - Buycycle
-    - Cycling
     - Route Planning
     - OpenStreetMap
     - BRouter
