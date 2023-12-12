@@ -20,13 +20,11 @@ Deciding where to cycle is one of the most important ingredients for a good time
 And for that it doesn't even matter if we want to make the daily commute to work a little nicer or if we want to spend several days riding through the Alps Bikepacking. So in today's blog post, we'll introduce you to a few of the most helpful route planning tools to make your next cycling adventure even easier to prepare and more enjoyable to experience.
 We will intentionally focus on opensource tools that provide the most customization and provide a way to actively contribute to the tools and underlying maps.
 # OpenStreetMap
-
-<figure>
-  <img src="{{site.url}}/content/post/route-planning/image1.png" alt="my alt text"/>
-  <figcaption>This is my caption text.</figcaption>
-</figure>
-
 ![OpenStreetMap Example](image1.png)
+<figure>
+  <img src="image1.png" alt="OpenStreetMap Example">
+  <figcaption>Surface categories make it easy to tweak surface types.</figcaption>
+</figure>
 *Surface categories make it easy to tweak surface types.*
 In fact, the vast majority of bike-specific routing solutions, which also take into account important criteria such as preference for elevation changes, road surfaces, or avoiding dangerous roads, are based on OpenStreetMap.
 This platform offers you a free, editable map of the world created by a global community of volunteers. Users can share, edit, and use all kinds of geographic data on OpenStreetMap, so you can find the very last trail, viewpoint, or hidden bike path. Whether in the city or off the beaten path - OpenStreetMap knows every spot. Even bicycle parking and repair stations, which is particularly practical for cyclists. And if it is not there yet, you can add it to the maps database.
