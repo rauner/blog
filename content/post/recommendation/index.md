@@ -21,6 +21,7 @@ links:
 ---
 
 
+
 Buycycle emerges as a transformative platform in the pre-owned bicycle market. A market hindered before by high transaction costs that deterred customers from considering used bikes over buying new. These costs, ranging from complex cross-border shipping to concerns over buyer and seller trust and prevalent information inefficiencies, are now being mitigated through Buycycle's comprehensive service offerings.
 
 By centralizing services such as streamlined international shipping, secure escrow payment systems, and robust insurance options, Buycycle aims at reducing the barriers to buying and selling pre-owned bikes. This not only elevates the value proposition of second-hand bicycles but also enhances market efficiency, making pre-owned options more competitive against new purchases.
@@ -28,6 +29,7 @@ By centralizing services such as streamlined international shipping, secure escr
 Environmental benefits are inherent in our business model, promoting bicycle reuse, reducing CO2 emissions, and supporting sustainable consumption. Economically, Buycycle enables more affordable cycling options, fostering broader adoption and healthier lifestyles while lessening dependence on costlier transport.
 
 One key tool to achieve this is through Democratizing Bike Market Information, providing detailed bike insights to inform buyers and sellers alike.
+
 
 
 ## Democratizing Bike Market Information
@@ -57,6 +59,23 @@ The second tier utilizes collaborative filtering, which leverages user behavior 
 
 Our system is built as a Flask app, hosted on Kubernetes for scalability and managed with ArgoCD for continuous deployment, ensuring reliability and up-to-date functionality.
 For a deeper look into our system, visit our [Repository](#repository-section) section.
+
+
+### Repository {#repository-section}
+
+<div class="article-list--compact links">
+    <article>
+        <a href="https://gitlab.com/buycycle/recommendation_content" target="_blank" rel="noopener">
+            <div class="article-details">
+                <h2 class="article-title">Personalization Engine</h2>
+                <footer class="article-time">Repo</footer>
+            </div>
+            <div class="article-image">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" loading="lazy" alt="GitHub Logo">
+            </div>
+        </a>
+    </article>
+</div>
 
 ### Content-Based
 
@@ -219,6 +238,4 @@ These initiatives are just the beginning of our journey into machine learning. W
 ## Paper
 
    <embed src="recommendation-2.pdf" type="application/pdf" width="100%" height="600px" />
-
-## Repository {#repository-section}
 
