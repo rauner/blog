@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Route Planning on Sebastian Rauner</title><link>https://rauner.github.io/blog/tags/route-planning/</link><description>Recent content in Route Planning on Sebastian Rauner</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 11 Dec 2023 21:10:00 +0700</lastBuildDate><atom:link href="https://rauner.github.io/blog/tags/route-planning/index.xml" rel="self" type="application/rss+xml"/><item><title>The beauty of open source route planning</title><link>https://rauner.github.io/blog/p/route-planning/</link><pubDate>Mon, 11 Dec 2023 21:10:00 +0700</pubDate><guid>https://rauner.github.io/blog/p/route-planning/</guid><description>&lt;img src="https://rauner.github.io/blog/p/route-planning/cover.jpg" alt="Featured image of post The beauty of open source route planning" />&lt;p>Deciding where to cycle is one of the most important ingredients for a good time on the bike. In the past, for the ideal route, you needed a friend that knew the surrounding roads inside out, or you spent hours studying some map. Today, it&amp;rsquo;s a lot easier: two taps with your finger and we&amp;rsquo;ve got a great starting point to refine the perfect route for your tour.
+And for that it doesn&amp;rsquo;t even matter if we want to make the daily commute to work a little nicer or if we want to spend several days riding through the Alps Bikepacking. So in today&amp;rsquo;s blog post, we&amp;rsquo;ll introduce you to a few of the most helpful route planning tools to make your next cycling adventure even easier to prepare and more enjoyable to experience.
+We will intentionally focus on opensource tools that provide the most customization and provide a way to actively contribute to the tools and underlying maps.&lt;/p>
+&lt;figure>
+&lt;img src="cover.png" alt="Official Cycling routes in OpenStreetMap">
+&lt;figcaption>Official Cycling routes in OpenStreetMap.&lt;/figcaption>
+&lt;/figure>
+&lt;h1 id="openstreetmap">OpenStreetMap&lt;/h1>
+&lt;p>In fact, the vast majority of bike-specific routing solutions, which also take into account important criteria such as preference for elevation changes, road surfaces, or avoiding dangerous roads, are based on OpenStreetMap.
+This platform offers you a free, editable map of the world created by a global community of volunteers. Users can share, edit, and use all kinds of geographic data on OpenStreetMap, so you can find the very last trail, viewpoint, or hidden bike path. Whether in the city or off the beaten path - OpenStreetMap knows every spot. Even bicycle parking and repair stations, which is particularly practical for cyclists. And if it is not there yet, you can add it to the maps database.
+What is clear is that this sheer mass of data and detail could never in a lifetime be collected and continuously updated at this density by a single company. OpenStreetMap is therefore a true boon for route planning, from the Community, for the community.&lt;/p>
+&lt;figure>
+&lt;img src="image1.png" alt="OpenStreetMap Example">
+&lt;figcaption>Surface categories make it easy to tweak surface types.&lt;/figcaption>
+&lt;/figure>
+&lt;h1 id="brouter">BRouter&lt;/h1>
+&lt;p>Planning and riding a great route in general consists of two parts, the planning before and the navigation during your ride.
+BRouter is another open source project (based on OpenStreetMap) that covers the planning phase. And it works both in the app and on the web.
+Here you can find various maps in satellite or topographic view, as well as cycling-specific overlays that give you access to entire libraries of bike trails (including those from waymarked trails saved routes). Additionally, you will also find Gravel-, mountain bike- or road bike routing profiles, which you can even customize to your individual needs in a second step. A great feature is the surface and road type view. Here you can see how much of your ride is the types you prefer and by clicking on them get highlight live on the map, a great tool for refining the route. Once satisfied, you only need to save the map as a gpx file and download it on your navigation device.
+In addition, and this is unfortunately still relatively rare among navigation software, your data is neither shared with third-party providers, nor tracked or stored in any other way. You are also spared from in-app purchases or advertising.
+All this makes BRouter a great tool for planning your next trip, although the rich interface might take some time and effort to get used to.&lt;/p>
+&lt;figure>
+&lt;img src="image2.png" alt="BRouter Interface">
+&lt;figcaption>Road bike minimized traffic routing from Munich over the Stelvio pass to Meran.&lt;/figcaption>
+&lt;/figure>
+&lt;h1 id="osmand">osmAnd&lt;/h1>
+&lt;p>The gpx file from BRrouter can be imported into any navigation device. However, if you just want to use your phone, there are great apps that guide you safely and with ton of additional features. The app osmAnd is one of them and offers two crucial advantages: Bike-specific maps and turn-by-turn voice navigation. For you, this means: Stash your phone in your pocket or mount it on your handlebar and off you go.
+With several available plug-ins you can also connect your favorite weather app, the now familiar BRouter for offline maps, Topography for elevation profiles or even Wikipedia with osmAnd. The latter accesses your location while driving and informs you about surrounding national parks, statues, monuments, cities and&amp;hellip; Well, about pretty much everything, that you cycle past that has a Wikipedia entry. That way you challenge your body and educate yourself at the same time!
+The app is free, but you have to pay extra for a few plugins. Fortunately, this is not absolutely necessary, as the free version already offers (almost) everything you need. Pro tip: The developers want to foster open source and give a free pro version when using the alternative app store F-Driod.
+OpenStreetMap, BRouter and osmAnd are all opensource projects. While their data base is huge and their opensource character makes them great free, democratic and tools that benefit us all, they can be a bit hard to navigate and use. So if you&amp;rsquo;re looking for something a bit more user-experience oriented, these next suggestions might be just right for you!&lt;/p>
+&lt;figure>
+&lt;img src="image3.png" alt="osmAnd App">
+&lt;figcaption>A tour through the Berlin Tiergarten as suggested by osmAnd with the Wikipedia plug-in active.&lt;/figcaption>
+&lt;/figure></description></item></channel></rss>
