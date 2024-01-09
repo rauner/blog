@@ -15,7 +15,7 @@ weight: 1
 links:
   - title: Personalization Engine
     description: Repo
-    website: https://gitlab.com/buycycle/recommendation_content
+    website: https://github.com/buycycle/Personalization_Engine
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
 
 ---
@@ -65,7 +65,7 @@ For a deeper look into our system, visit our [Repository](#repository-section) s
 
 <div class="article-list--compact links">
     <article>
-        <a href="https://gitlab.com/buycycle/recommendation_content" target="_blank" rel="noopener">
+        <a href="https://github.com/buycycle/Personalization_Engine" target="_blank" rel="noopener">
             <div class="article-details">
                 <h2 class="article-title">Personalization Engine</h2>
                 <footer class="article-time">Repo</footer>
