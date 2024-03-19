@@ -1,13 +1,13 @@
 ---
 
 title:  Navigating the Pre-Owned Bike Market
-description: Buycycle's Personalization Engine
+description: buycycle's Personalization Engine
 slug: recommendation
 date: 2023-12-12T21:10:00+07:00
 image: cover.png
 categories:
     - Machine_Learning
-    - Buycycle
+    - buycycle
 tags:
     - Personalization
 weight: 1
@@ -22,18 +22,18 @@ links:
 
 
 
-Buycycle emerges as a transformative platform in the pre-owned bicycle market. A market hindered before by high transaction costs that deterred customers from considering used bikes over buying new. These costs, ranging from complex cross-border shipping to concerns over buyer and seller trust and prevalent information inefficiencies, are now being mitigated through Buycycle's comprehensive service offerings.
+buycycle emerges as a transformative platform in the pre-owned bicycle market. A market hindered before by high transaction costs that deterred customers from considering used bikes over buying new. These costs, ranging from complex cross-border shipping to concerns over buyer and seller trust and prevalent information inefficiencies, are now being mitigated through buycycle's comprehensive service offerings.
 
-By centralizing services such as streamlined international shipping, secure escrow payment systems, and robust insurance options, Buycycle aims at reducing the barriers to buying and selling pre-owned bikes. This not only elevates the value proposition of second-hand bicycles but also enhances market efficiency, making pre-owned options more competitive against new purchases.
+By centralizing services such as streamlined international shipping, secure escrow payment systems, and robust insurance options, buycycle aims at reducing the barriers to buying and selling pre-owned bikes. This not only elevates the value proposition of second-hand bicycles but also enhances market efficiency, making pre-owned options more competitive against new purchases.
 
-Environmental benefits are inherent in our business model, promoting bicycle reuse, reducing CO2 emissions, and supporting sustainable consumption. Economically, Buycycle enables more affordable cycling options, fostering broader adoption and healthier lifestyles while lessening dependence on costlier transport.
+Environmental benefits are inherent in our business model, promoting bicycle reuse, reducing CO2 emissions, and supporting sustainable consumption. Economically, buycycle enables more affordable cycling options, fostering broader adoption and healthier lifestyles while lessening dependence on costlier transport.
 
 One key tool to achieve this is through Democratizing Bike Market Information, providing detailed bike insights to inform buyers and sellers alike.
 
 
 
 ## Democratizing Bike Market Information
-A core mission of Buycycle is to establish a level playing field by ensuring all market participants have access to comprehensive and symmetrical information. To this end, we offer a detailed buyers guide to empower consumers, provide precise bicycle valuations, and facilitate the connection between buyers and sellers by aligning the right bikes with user preferences. Achieving such transparency is made possible through our commitment to data-driven services, which forms the cornerstone of the Buycycle platform.
+A core mission of buycycle is to establish a level playing field by ensuring all market participants have access to comprehensive and symmetrical information. To this end, we offer a detailed buyers guide to empower consumers, provide precise bicycle valuations, and facilitate the connection between buyers and sellers by aligning the right bikes with user preferences. Achieving such transparency is made possible through our commitment to data-driven services, which forms the cornerstone of the buycycle platform.
 
 Personalization emerges as a natural progression in our quest to democratize market information. By leveraging the power of machine learning, we aim to curate a tailored experience for each user, ensuring that the wealth of information available is not only accessible but also actionable. This focus on personalization is not just about enhancing user experience—it's about transforming data into meaningful interactions that resonate with the individual needs and desires of our customers.
 
@@ -51,7 +51,7 @@ The recommendation system is designed to address four key aspects:
 
 
 ## Personalization Engine
-Buycycle's Personalization engine employs a two-tiered approach to cater to users with varying levels of historic feedback data.
+buycycle's Personalization engine employs a two-tiered approach to cater to users with varying levels of historic feedback data.
 
 The first tier is a content-based model that suggests bikes based on specific attributes such as type, size, and brand, ideal for users with clear preferences or limited interaction history.
 
@@ -229,7 +229,7 @@ Figure 3 showcases the A/B test outcomes over the 14-day period, providing clear
 
 
 ## Expanding Personalization Through Advanced Applications
-Buycycle's inaugural machine learning model, our personalization engine, is a cornerstone in our quest to revolutionize the pre-owned bicycle market. It tackles key challenges such as information inefficiencies by delivering personalized bike suggestions, empowering our users to make well-informed decisions. This advancement is a significant stride towards bolstering Buycycle's dedication to market efficiency, environmental sustainability, and economic accessibility.
+buycycle's inaugural machine learning model, our personalization engine, is a cornerstone in our quest to revolutionize the pre-owned bicycle market. It tackles key challenges such as information inefficiencies by delivering personalized bike suggestions, empowering our users to make well-informed decisions. This advancement is a significant stride towards bolstering buycycle's dedication to market efficiency, environmental sustainability, and economic accessibility.
 
 As we refine this first model and embrace cutting-edge technologies, we're excited to broaden its use, including personalized email campaigns and real-time personalization through streaming data.
 
