@@ -36,6 +36,17 @@ The assistant is designed to be fully aware of Buycycle's inventory and help art
 - **Dynamic Frontend**: The use of htmx and JavaScript on the frontend ensures a dynamic and responsive user interface, with seamless partial page updates and asynchronous form submissions.
 - **Database Integration**: SQLite is used for storing conversation history, providing a lightweight and fast solution for data management.
 - **Environment Configuration**: Configuration is managed through `.env` files, allowing for a clean and organized setup process.
+## Lessons Learned
+During the development of the Buycycle Assistant, two key lessons were learned:
+1. **Structured Data Queries**: Providing the assistant with specific Python code to query the database and help articles ensures consistent and accurate information retrieval. This approach prevents the assistant from misinterpreting the data, leading to a more reliable user experience.
+2. **Dynamic File Referencing**: Dynamically referencing file resources with their respective file-ids after attaching them to the assistant is essential. This method guarantees that the assistant recognizes and utilizes the correct sources, maintaining the integrity of the information provided.
+## Showcasing Main Capabilities
+The assistant's two main capabilities are showcased in the following images:
+- **Bike Recommendations**: The assistant can recommend bikes from the inventory that match the user's preferences, as illustrated in `bike_recom.png`.
+![Bike Recommendations](bike_recom.png)
+- **Help Article Awareness**: The assistant can provide information from help articles to assist users with their queries about the website and the buying and selling process, as shown in `article_awareness.png`.
+![Help Article Awareness](article_awareness.png)
+
 ## Setting Up the Assistant
 Developers can set up the assistant with ease, thanks to Rust's package manager and a straightforward `.env` file for environment variables. The assistant is also containerized with Docker, offering a consistent development and deployment environment.
 ## Conclusion
