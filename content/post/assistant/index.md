@@ -3,7 +3,7 @@ title: Crafting a Multilingual, Item and Content Aware Assistant with Rust and C
 description: buycycle's innovative approach to enhancing customer experience with a Rust-built assistant integrated with ChatGPT.
 slug: buycycle-assistant
 date: 2024-03-12T21:10:00+07:00
-image: assistant_cover.png
+image: cover.jpg
 categories:
     - LLM
     - buycycle
@@ -21,6 +21,8 @@ links:
 
 # Crafting a Multilingual, Item and Content Aware Assistant with Rust and ChatGPT
 In the rapidly evolving world of e-commerce, providing personalized and efficient customer support is paramount. buycycle has taken a significant leap forward by developing a multilingual, item and content aware assistant. This assistant is not just a chatbot; it's a sophisticated tool built with the safety and performance of Rust, and the cutting-edge language understanding capabilities of OpenAI's ChatGPT.
+## Simplified Frontend Development with Rust and htmx
+The development of the assistant's frontend was greatly simplified by the use of Rust and Axum, along with htmx. Rust's safety and performance, combined with Axum's modularity, provided a strong foundation for building a robust backend. htmx's ability to handle dynamic content updates made creating a responsive and interactive user interface a breeze. This synergy allowed us to focus on delivering a product that not only performs well but is also straightforward and enjoyable for our users to interact with.
 ## The Power of Rust
 Rust is a game-changer for building reliable and efficient software. It offers memory safety guarantees, which means fewer crashes and security vulnerabilities. Its performance is on par with C++, making it ideal for high-load services like an online assistant. Rust's powerful concurrency model allows our assistant to handle multiple user queries simultaneously without a hitch.
 ## Integration with ChatGPT
@@ -49,9 +51,12 @@ The assistant's two main capabilities are showcased in the following images:
 
 ## Setting Up the Assistant
 Developers can set up the assistant with ease, thanks to Rust's package manager and a straightforward `.env` file for environment variables. The assistant is also containerized with Docker, offering a consistent development and deployment environment.
-## Conclusion
-buycycle's assistant is a testament to the power of combining Rust's performance and safety with the advanced AI capabilities of ChatGPT. It's an innovative solution that enhances the customer experience by providing real-time, accurate, and personalized support. As we continue to refine and expand its capabilities, the assistant will play a crucial role in making buycycle the go-to platform for pre-owned high-end sport bikes.
 
+## Experience the Assistant Live
+We invite you to experience the Buycycle Assistant firsthand by visiting the live version at [assistant.buycycle.com](https://assistant.buycycle.com/). Engage with the assistant and discover how it can enhance your journey through our platform, whether you're looking to buy a pre-owned high-end sport bike or seeking assistance with our services.
+
+## Outlook: Connecting to Data Science Products
+Looking ahead, Buycycle plans to expand the capabilities of our assistant by connecting it to other Data Science products, such as personalized bike recommendations. This integration will leverage user data and machine learning models to further refine the assistant's ability to provide customized suggestions, enhancing the personal touch that Buycycle is known for.
 
 ## Repository {#repository-section}
 <div class="article-list--compact links">
