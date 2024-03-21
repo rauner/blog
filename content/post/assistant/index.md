@@ -1,8 +1,8 @@
 ---
-title: Crafting a Multilingual, Item and Content Aware Assistant with Rust and ChatGPT
-description: buycycle's innovative approach to enhancing customer experience with a Rust-built assistant integrated with ChatGPT.
+title: with Rust and ChatGPT
+description: buycycle's innovative approach to enhancing customer experience with a Rust-built assistant powered by ChatGPT.
 slug: buycycle-assistant
-date: 2024-03-12T21:10:00+07:00
+date: 2024-03-21T00:00:00+07:00
 image: cover.jpg
 categories:
     - LLM
@@ -10,7 +10,7 @@ categories:
 tags:
     - ChatGPT
     - Rust
-    - Multilingual
+    - assistant
 weight: 1
 links:
   - title: buycycle Assistant Repository
@@ -19,20 +19,26 @@ links:
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
 ---
 
-# Crafting a Multilingual, Item and Content Aware Assistant with Rust and ChatGPT
-In the rapidly evolving world of e-commerce, providing personalized and efficient customer support is paramount. buycycle has taken a significant leap forward by developing a multilingual, item and content aware assistant. This assistant is not just a chatbot; it's a sophisticated tool built with the safety and performance of Rust, and the cutting-edge language understanding capabilities of OpenAI's ChatGPT.
+# Crafting a Multilingual, Inventory and and Help Article Aware Assistant with Rust and ChatGPT
+One of buycycle's missions is to guilde our users to find the best bike. In the rapidly evolving world of e-commerce, providing personalized and efficient customer support is crucial. To take both goals, we develop a inventory and aware assistant pretrained on how the platform works and customer support best practices.
+
 ## Simplified Frontend Development with Rust and htmx
-The development of the assistant's frontend was greatly simplified by the use of Rust and Axum, along with htmx. Rust's safety and performance, combined with Axum's modularity, provided a strong foundation for building a robust backend. htmx's ability to handle dynamic content updates made creating a responsive and interactive user interface a breeze. This synergy allowed us to focus on delivering a product that not only performs well but is also straightforward and enjoyable for our users to interact with.
-## The Power of Rust
-Rust is a game-changer for building reliable and efficient software. It offers memory safety guarantees, which means fewer crashes and security vulnerabilities. Its performance is on par with C++, making it ideal for high-load services like an online assistant. Rust's powerful concurrency model allows our assistant to handle multiple user queries simultaneously without a hitch.
+The development of the assistant's frontend was greatly simplified by the use of Rust and Axum, along with htmx. Rust's safety and performance, combined with Axum's modularity, provided a strong foundation for building a robust backend. htmx's ability to handle dynamic content updates made creating a responsive and interactive user interface a matter of hours rather than days. This synergy allowed us to focus on delivering a product that not only performs well but is also straightforward and enjoyable to develop and maintain.
 ## Integration with ChatGPT
 OpenAI's ChatGPT enhances our assistant with advanced natural language processing. It understands and generates responses in multiple languages, ensuring that users can interact in their preferred language. This integration allows the assistant to provide nuanced and contextually relevant support, drawing from a vast knowledge base of cycling information.
-## Database and Help Article Awareness
+Additonally, the API supports tools like Code Interpreter, Retrieval, and Function calling, which can be explored using the Assistants playground or by following a step-by-step integration guide.
+Our assitant is implemented as a typical integration of the API:
+1. **Create an Assistant**: Define custom instructions and choose a model for your Assistant. Optionally, add files and enable tools like Code Interpreter, Retrieval, and Function calling.
+2. **Create a Thread**: Start a conversation thread when a user begins interacting with your Assistant.
+3. **Add Messages to the Thread**: As the user asks questions, add their messages to the thread.
+4. **Run the Assistant on the Thread**: Generate a response by calling the model and the tools associated with the Assistant.
+For a more detailed explanation of each step and additional features such as streaming, you can refer to the official OpenAI documentation on the Assistants API [here](https://platform.openai.com/docs/assistants/overview?context=with-streaming).
+## Inventory and Help Article Awareness
 The assistant is designed to be fully aware of buycycle's inventory and help articles. It accesses the `{bikes.json}` and `{help_articles.json}` files to provide real-time, accurate information to users. Whether a customer is looking for a specific type of bike or needs guidance on using the platform, the assistant can pull the relevant data and offer tailored assistance.
 ## How the Assistant Works
 1. **Multilingual Support**: The assistant can converse with users in multiple languages, offering a personalized experience to a global audience.
-2. **Item Awareness**: By querying the `{bikes.json}` file, the assistant can recommend bikes from buycycle's inventory that match the user's preferences for category, budget, body height, and color.
-3. **Content Awareness**: The assistant uses the `{help_articles.json}` file to answer questions about the website and the buying and selling process. If a query falls outside the scope of the help articles, the assistant directs users to buycycle's contact page for further support.
+2. **Inventory Awareness**: By making the inventory DB availbable to the assistant, it can recommend bikes from buycycle's inventory that match the user's preferences for category, budget, body height, and color.
+3. **Content Awareness**: The assistant uses the our multi-lingual zen desk help articles to answer questions about the website and the buying and selling process. If a query falls outside the scope of the help articles, the assistant directs users to buycycle's contact page for further support.
 ## Implementation Highlights
 - **Scalable Backend**: Built with Axum, the assistant benefits from a robust and modular web framework that scales effortlessly with demand.
 - **Dynamic Frontend**: The use of htmx and JavaScript on the frontend ensures a dynamic and responsive user interface, with seamless partial page updates and asynchronous form submissions.
