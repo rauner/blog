@@ -22,7 +22,7 @@ links:
 # Crafting a Multilingual, Inventory and and Help Article Aware Assistant with Rust and ChatGPT
 One of buycycle's missions is to guide our users to find the best bike fitting their needs and preferences. In the rapidly evolving world of e-commerce, providing personalized and efficient customer support is crucial. To takle both goals, we develop a inventory aware assistant, pretrained on the intricacies of the platform and customer support best practices.
 
-## Simplified Frontend Development with Rust and htmx
+## Simplified Fullstack Development with Rust and htmx
 The development of the assistant's frontend was greatly simplified by the use of Rust and Axum, along with htmx. Rust's safety and performance, combined with Axum's modularity, provided a strong foundation for building a robust backend. htmx's ability to handle dynamic content updates made creating a responsive and interactive user interface a matter of hours rather than days. This synergy allowed us to focus on delivering a product that not only performs well but is also straightforward and enjoyable to develop and maintain.
 ## Integration with ChatGPT
 OpenAI's ChatGPT enhances our assistant with advanced natural language processing. It understands and generates responses in multiple languages, ensuring that users can interact in their preferred language. This integration allows the assistant to provide nuanced and contextually relevant support, drawing from a vast knowledge base of cycling information.
