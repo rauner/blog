@@ -50,9 +50,11 @@ During the development of the buycycle Assistant, two key lessons were learned:
 2. **Dynamic File Referencing**: Dynamically referencing file resources with their respective file-ids after attaching them to the assistant is essential. This method guarantees that the assistant recognizes and utilizes the correct sources, maintaining the integrity of the information provided.
 ## Showcasing Main Capabilities
 The assistant's two main capabilities are showcased in the following images:
-- **Bike Recommendations**: The assistant can recommend bikes from the inventory that match the user's preferences, as illustrated in `bike_recom.png`.
+- **Bike Recommendations**: The assistant can recommend bikes from the inventory that match the user's preferences.
 ![Bike Recommendations](bike_recom.png)
-- **Help Article Awareness**: The assistant can provide information from help articles to assist users with their queries about the website and the buying and selling process, as shown in `article_awareness.png`.
+- **Help Article Awareness**: The assistant can provide information from help articles to assist users with their queries about the website and the buying and selling process.
+![Help Article Awareness](article_awareness.png)
+- **Multilingual support**: The assistant can assist users in all languages currently relevant for buycycle.
 ![Help Article Awareness](article_awareness.png)
 
 ## Setting Up the Assistant
