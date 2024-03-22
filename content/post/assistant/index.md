@@ -1,5 +1,5 @@
 ---
-title: with Rust and ChatGPT
+title:  buycycle's Inventory and and Help Article Aware Assistant
 description: buycycle's innovative approach to enhancing customer experience with a Rust-built assistant powered by ChatGPT.
 slug: buycycle-assistant
 date: 2024-03-21T00:00:00+07:00
@@ -51,10 +51,15 @@ During the development of the buycycle Assistant, two key lessons were learned:
 ## Showcasing Main Capabilities
 The assistant's two main capabilities are showcased in the following images:
 - **Bike Recommendations**: The assistant can recommend bikes from the inventory that match the user's preferences.
+
 ![Bike Recommendations](bike_recom.png)
+
 - **Help Article Awareness**: The assistant can provide information from help articles to assist users with their queries about the website and the buying and selling process.
+
 ![Help Article Awareness](article_awareness.png)
+
 - **Multilingual support**: The assistant can assist users in all languages currently relevant for buycycle.
+
 ![Help Article Awareness](article_awareness.png)
 
 ## Setting Up the Assistant
