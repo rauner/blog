@@ -90,7 +90,7 @@ Our Personalization engine's content-based filtering is designed to suggest bike
 <th><strong>msrp</strong></th>
 </tr>
 <tr>
-<td>465551</td>
+<td>35551</td>
 <td>18128</td>
 <td>3400.0</td>
 <td>5800.0</td>
@@ -126,7 +126,7 @@ Our Personalization engine's content-based filtering is designed to suggest bike
 <th><strong>rider_height_min</strong></th>
 </tr>
 <tr>
-<td>Bystřice pod Hostýnem</td>
+<td>Berlin</td>
 <td>3.0</td>
 <td>56</td>
 <td>173.0</td>
@@ -174,7 +174,7 @@ Our Personalization engine's content-based filtering is designed to suggest bike
 <th></th>
 </tr>
 <tr>
-<td>151982</td>
+<td>151982</td>:w\
 <td>0</td>
 <td>0</td>
 <td></td>
