@@ -3,7 +3,7 @@ title:  buycycle's Inventory and and Help Article Aware Assistant
 description: buycycle's innovative approach to enhancing customer experience with a Rust-built assistant powered by ChatGPT.
 slug: buycycle-assistant
 date: 2024-03-21T00:00:00+07:00
-image: cover.jpg
+image: cover.png
 categories:
     - LLM
     - buycycle
