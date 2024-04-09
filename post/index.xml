@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Sebastian Rauner</title><link>https://rauner.github.io/blog/post/</link><description>Recent content in Posts on Sebastian Rauner</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 21 Mar 2024 00:00:00 +0700</lastBuildDate><atom:link href="https://rauner.github.io/blog/post/index.xml" rel="self" type="application/rss+xml"/><item><title>buycycle's Inventory and and Help Article Aware Assistant</title><link>https://rauner.github.io/blog/p/buycycle-assistant/</link><pubDate>Thu, 21 Mar 2024 00:00:00 +0700</pubDate><guid>https://rauner.github.io/blog/p/buycycle-assistant/</guid><description>&lt;img src="https://rauner.github.io/blog/p/buycycle-assistant/cover.png" alt="Featured image of post buycycle's Inventory and and Help Article Aware Assistant" />&lt;h1 id="crafting-a-multilingual-inventory-and-and-help-article-aware-assistant-with-rust-and-chatgpt">Crafting a Multilingual, Inventory and and Help Article Aware Assistant with Rust and ChatGPT&lt;/h1>
+&lt;p>One of buycycle&amp;rsquo;s missions is to guide our users to find the best bike fitting their needs and preferences. In the rapidly evolving world of e-commerce, providing personalized and efficient customer support is crucial. To takle both goals, we develop a inventory aware assistant, pretrained on the intricacies of the platform and customer support best practices.&lt;/p>
+&lt;h2 id="simplified-fullstack-development-with-rust-and-htmx">Simplified Fullstack Development with Rust and htmx&lt;/h2>
+&lt;p>The development of the assistant&amp;rsquo;s frontend was greatly simplified by the use of Rust and Axum, along with htmx. Rust&amp;rsquo;s safety and performance, combined with Axum&amp;rsquo;s modularity, provided a strong foundation for building a robust backend. htmx&amp;rsquo;s ability to handle dynamic content updates made creating a responsive and interactive user interface a matter of hours rather than days. This synergy allowed us to focus on delivering a product that not only performs well but is also straightforward and enjoyable to develop and maintain.&lt;/p>
+&lt;h2 id="integration-with-chatgpt">Integration with ChatGPT&lt;/h2>
+&lt;p>OpenAI&amp;rsquo;s ChatGPT enhances our assistant with advanced natural language processing. It understands and generates responses in multiple languages, ensuring that users can interact in their preferred language. This integration allows the assistant to provide nuanced and contextually relevant support, drawing from a vast knowledge base of cycling information.
+Additonally, the API supports tools like Code Interpreter, Retrieval, and Function calling, which can be explored using the Assistants playground or by following a step-by-step integration guide.
+Our assitant is implemented as a typical integration of the API:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Create an Assistant&lt;/strong>: Define custom instructions and choose a model for your Assistant. Optionally, add files and enable tools like Code Interpreter, Retrieval, and Function calling.&lt;/li>
+&lt;li>&lt;strong>Create a Thread&lt;/strong>: Start a conversation thread when a user begins interacting with your Assistant.&lt;/li>
+&lt;li>&lt;strong>Add Messages to the Thread&lt;/strong>: As the user asks questions, add their messages to the thread.&lt;/li>
+&lt;li>&lt;strong>Run the Assistant on the Thread&lt;/strong>: Generate a response by calling the model and the tools associated with the Assistant.
+For a more detailed explanation of each step and additional features such as streaming, you can refer to the official OpenAI documentation on the Assistants API &lt;a class="link" href="https://platform.openai.com/docs/assistants/overview?context=with-streaming" target="_blank" rel="noopener"
+>here&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="inventory-and-help-article-awareness">Inventory and Help Article Awareness&lt;/h2>
+&lt;p>The assistant is designed to be fully aware of buycycle&amp;rsquo;s inventory and help articles. It periodically queries the DB and attaches these files to the assitant to provide real-time, accurate information to users. Whether a customer is looking for a specific type of bike or needs guidance on using the platform, the assistant can pull the relevant data and offer tailored assistance.&lt;/p>
+&lt;h2 id="how-the-assistant-works">How the Assistant Works&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Multilingual Support&lt;/strong>: The assistant can converse with users in multiple languages, offering a personalized experience to a global audience.&lt;/li>
+&lt;li>&lt;strong>Inventory Awareness&lt;/strong>: By making the inventory DB availbable to the assistant, it can recommend bikes from buycycle&amp;rsquo;s inventory that match the user&amp;rsquo;s preferences for category, budget, body height, and color.&lt;/li>
+&lt;li>&lt;strong>Content Awareness&lt;/strong>: The assistant ingestes our multi-lingual zen desk help articles to answer questions about the platform and the buying and selling process. If a query falls outside the scope of the help articles, the assistant directs users to buycycle&amp;rsquo;s contact page for further support.&lt;/li>
+&lt;/ol>
+&lt;h2 id="implementation-highlights">Implementation Highlights&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Scalable Backend&lt;/strong>: Built with Axum, the assistant benefits from a robust and modular web framework that scales effortlessly with demand.&lt;/li>
+&lt;li>&lt;strong>Dynamic Frontend&lt;/strong>: The use of htmx on the frontend ensures a dynamic and responsive user interface, with seamless partial page updates and asynchronous form submissions.&lt;/li>
+&lt;li>&lt;strong>Database Integration&lt;/strong>: SQLite is used for storing conversation history, providing a lightweight and fast solution for data management.&lt;/li>
+&lt;/ul>
+&lt;h2 id="lessons-learned">Lessons Learned&lt;/h2>
+&lt;p>During the development of the buycycle Assistant, two key lessons were learned:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Structured Data Queries&lt;/strong>: Providing the assistant with specific Python code to query the database and help articles ensures consistent and accurate information retrieval. This approach prevents the assistant from misinterpreting the data, leading to a more reliable user experience.&lt;/li>
+&lt;li>&lt;strong>Dynamic File Referencing&lt;/strong>: Dynamically referencing file resources with their respective file-ids after attaching them to the assistant is essential. This method guarantees that the assistant recognizes and utilizes the correct sources, maintaining the integrity of the information provided.&lt;/li>
+&lt;/ol>
+&lt;h2 id="showcasing-main-capabilities">Showcasing Main Capabilities&lt;/h2>
+&lt;p>The assistant&amp;rsquo;s two main capabilities are showcased in the following images:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Inventory Awareness&lt;/strong>: The assistant can recommend bikes from the inventory that match the user&amp;rsquo;s preferences.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://rauner.github.io/blog/blog/p/buycycle-assistant/bike_recom.png"
+width="545"
+height="1198"
+srcset="https://rauner.github.io/blog/blog/p/buycycle-assistant/bike_recom_hubb250f6d1dc0b6e46f2b5bcc8876d036_150562_480x0_resize_box_3.png 480w, https://rauner.github.io/blog/blog/p/buycycle-assistant/bike_recom_hubb250f6d1dc0b6e46f2b5bcc8876d036_150562_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Bike Recommendations"
+class="gallery-image"
+data-flex-grow="45"
+data-flex-basis="109px"
+>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Help Article Awareness&lt;/strong>: The assistant can not reference to help articles links but provide information in the chat to assist users with their queries about the website and the buying and selling process.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://rauner.github.io/blog/blog/p/buycycle-assistant/article_awareness.png"
+width="484"
+height="907"
+srcset="https://rauner.github.io/blog/blog/p/buycycle-assistant/article_awareness_huc60f91ee6d2760e73c447b0de6950f19_119068_480x0_resize_box_3.png 480w, https://rauner.github.io/blog/blog/p/buycycle-assistant/article_awareness_huc60f91ee6d2760e73c447b0de6950f19_119068_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Help Article Awareness"
+class="gallery-image"
+data-flex-grow="53"
+data-flex-basis="128px"
+>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Multilingual Support&lt;/strong>: The assistant can assist users in all languages currently relevant for buycycle.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://rauner.github.io/blog/blog/p/buycycle-assistant/multi.png"
+width="482"
+height="747"
+srcset="https://rauner.github.io/blog/blog/p/buycycle-assistant/multi_hu93892d7aa1b670935aa8e34fef1256e5_102740_480x0_resize_box_3.png 480w, https://rauner.github.io/blog/blog/p/buycycle-assistant/multi_hu93892d7aa1b670935aa8e34fef1256e5_102740_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Multilingual Capabilities and Help Article Awareness"
+class="gallery-image"
+data-flex-grow="64"
+data-flex-basis="154px"
+>&lt;/p>
+&lt;h2 id="setting-up-the-assistant">Setting Up the Assistant&lt;/h2>
+&lt;p>Developers can set up the assistant with ease, thanks to Rust&amp;rsquo;s package manager and a straightforward &lt;code>.env&lt;/code> file for environment variables. The assistant is also containerized with Docker, offering a consistent development and deployment environment.&lt;/p>
+&lt;h2 id="experience-the-assistant-live">Experience the Assistant Live&lt;/h2>
+&lt;p>We invite you to experience the buycycle Assistant firsthand by visiting the live version at &lt;a class="link" href="https://assistant.buycycle.com/" target="_blank" rel="noopener"
+>assistant.buycycle.com&lt;/a>. Engage with the assistant and discover how it can enhance your journey through our platform, whether you&amp;rsquo;re looking to buy a pre-owned high-end sport bike or seeking assistance with our services.&lt;/p>
+&lt;h2 id="outlook-connecting-to-data-science-products">Outlook: Connecting to Data Science Products&lt;/h2>
+&lt;p>Looking ahead, buycycle plans to expand the capabilities of our assistant by connecting it to other Data Science products, such as personalized bike recommendations. This integration will leverage user data and machine learning models to further refine the assistant&amp;rsquo;s ability to provide customized suggestions, enhancing the personal touch that buycycle is known for.&lt;/p>
+&lt;h2 id="repository-section">Repository&lt;/h2>
+&lt;div class="article-list--compact links">
+&lt;article>
+&lt;a href="https://github.com/buycycle/assistant" target="_blank" rel="noopener">
+&lt;div class="article-details">
+&lt;h2 class="article-title">buycycle Assistant Repository&lt;/h2>
+&lt;footer class="article-time">Repo&lt;/footer>
+&lt;/div>
+&lt;div class="article-image">
+&lt;img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" loading="lazy" alt="GitHub Logo">
+&lt;/div>
+&lt;/a>
+&lt;/article>
+&lt;/div></description></item><item><title>Navigating the Pre-Owned Bike Market</title><link>https://rauner.github.io/blog/p/recommendation/</link><pubDate>Tue, 12 Dec 2023 21:10:00 +0700</pubDate><guid>https://rauner.github.io/blog/p/recommendation/</guid><description>&lt;img src="https://rauner.github.io/blog/p/recommendation/cover.png" alt="Featured image of post Navigating the Pre-Owned Bike Market" />&lt;p>buycycle emerges as a transformative platform in the pre-owned bicycle market. A market hindered before by high transaction costs that deterred customers from considering used bikes over buying new. These costs, ranging from complex cross-border shipping to concerns over buyer and seller trust and prevalent information inefficiencies, are now being mitigated through buycycle&amp;rsquo;s comprehensive service offerings.&lt;/p>
+&lt;p>By centralizing services such as streamlined international shipping, secure escrow payment systems, and robust insurance options, buycycle aims at reducing the barriers to buying and selling pre-owned bikes. This not only elevates the value proposition of second-hand bicycles but also enhances market efficiency, making pre-owned options more competitive against new purchases.&lt;/p>
+&lt;p>Environmental benefits are inherent in our business model, promoting bicycle reuse, reducing CO2 emissions, and supporting sustainable consumption. Economically, buycycle enables more affordable cycling options, fostering broader adoption and healthier lifestyles while lessening dependence on costlier transport.&lt;/p>
+&lt;p>One key tool to achieve this is through Democratizing Bike Market Information, providing detailed bike insights to inform buyers and sellers alike.&lt;/p>
+&lt;h2 id="democratizing-bike-market-information">Democratizing Bike Market Information&lt;/h2>
+&lt;p>A core mission of buycycle is to establish a level playing field by ensuring all market participants have access to comprehensive and symmetrical information. To this end, we offer a detailed buyers guide to empower consumers, provide precise bicycle valuations, and facilitate the connection between buyers and sellers by aligning the right bikes with user preferences. Achieving such transparency is made possible through our commitment to data-driven services, which forms the cornerstone of the buycycle platform.&lt;/p>
+&lt;p>Personalization emerges as a natural progression in our quest to democratize market information. By leveraging the power of machine learning, we aim to curate a tailored experience for each user, ensuring that the wealth of information available is not only accessible but also actionable. This focus on personalization is not just about enhancing user experience—it&amp;rsquo;s about transforming data into meaningful interactions that resonate with the individual needs and desires of our customers.&lt;/p>
+&lt;p>It is with this vision in mind that our data science team embarked on the development of our inaugural in-house machine learning model.&lt;/p>
+&lt;h2 id="data-driven-personalization">Data-Driven Personalization&lt;/h2>
+&lt;p>Imagine a user overwhelmed by the choice of 20,000 bikes on sale. They need assistance in finding the perfect fit, which may not always be readily available due to the nature of pre-owned stock. The recommendation system is tailored to help users navigate this vast selection effectively. On the other hand we need to ensure if the exact bike a user wants isn&amp;rsquo;t in stock, they won&amp;rsquo;t leave the platform empty-handed. Instead, they&amp;rsquo;ll be presented with a curated selection of alternatives that meet their needs and preferences, making the shopping experience personalized and efficient.&lt;/p>
+&lt;p>The recommendation system is designed to address four key aspects:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Relevance:&lt;/strong> Ensuring that the bikes recommended meet the user&amp;rsquo;s specific needs and preferences.&lt;/li>
+&lt;li>&lt;strong>Novelty:&lt;/strong> Introducing users to bikes they may not have previously considered or known about.&lt;/li>
+&lt;li>&lt;strong>Serendipity:&lt;/strong> Surprising users with bikes that they might find unexpectedly appealing.&lt;/li>
+&lt;li>&lt;strong>Diversity:&lt;/strong> Offering a wide range of bikes to prevent redundancy in recommendations.&lt;/li>
+&lt;/ul>
+&lt;h2 id="personalization-engine">Personalization Engine&lt;/h2>
+&lt;p>buycycle&amp;rsquo;s Personalization engine employs a two-tiered approach to cater to users with varying levels of historic feedback data.&lt;/p>
+&lt;p>The first tier is a content-based model that suggests bikes based on specific attributes such as type, size, and brand, ideal for users with clear preferences or limited interaction history.&lt;/p>
+&lt;p>The second tier utilizes collaborative filtering, which leverages user behavior and feedback to refine recommendations. This model identifies patterns in user interactions to suggest bikes that similar users have shown interest in, enhancing personalization as more data becomes available.&lt;/p>
+&lt;p>Our system is built as a Flask app, hosted on Kubernetes for scalability and managed with ArgoCD for continuous deployment, ensuring reliability and up-to-date functionality.
+For a deeper look into our system, visit our &lt;a class="link" href="#repository-section" >Repository&lt;/a> section.&lt;/p>
+&lt;h3 id="repository-section">Repository&lt;/h3>
+&lt;div class="article-list--compact links">
+&lt;article>
+&lt;a href="https://github.com/buycycle/Personalization_Engine" target="_blank" rel="noopener">
+&lt;div class="article-details">
+&lt;h2 class="article-title">Personalization Engine&lt;/h2>
+&lt;footer class="article-time">Repo&lt;/footer>
+&lt;/div>
+&lt;div class="article-image">
+&lt;img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" loading="lazy" alt="GitHub Logo">
+&lt;/div>
+&lt;/a>
+&lt;/article>
+&lt;/div>
+&lt;h3 id="content-based">Content-Based&lt;/h3>
+&lt;p>Our Personalization engine&amp;rsquo;s content-based filtering is designed to suggest bikes based on their features, independent of user history. This is crucial when user preferences are unknown, focusing instead on the attributes of the bikes as shown in Figure 1. The model compares bikes&amp;rsquo; characteristics, such as brand, frame size, brake type, and color, to identify similar options.&lt;/p>
+&lt;figure>
+&lt;table>
+&lt;tr>
+&lt;th>&lt;strong>id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>template_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>price&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>msrp&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>35551&lt;/td>
+&lt;td>18128&lt;/td>
+&lt;td>3400.0&lt;/td>
+&lt;td>5800.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>bike_created_at_year&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>bike_created_at_month&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>bike_year&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>sales_country_id&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>2023&lt;/td>
+&lt;td>11&lt;/td>
+&lt;td>2021&lt;/td>
+&lt;td>137&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>bike_type_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>bike_category_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>mileage_code&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>motor&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>3000_10000&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>city&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>condition_code&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>frame_size&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>rider_height_min&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>Berlin&lt;/td>
+&lt;td>3.0&lt;/td>
+&lt;td>56&lt;/td>
+&lt;td>173.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>rider_height_max&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>brake_type_code&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>frame_material_code&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>shifting_code&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>183.0&lt;/td>
+&lt;td>hydraulic&lt;/td>
+&lt;td>carbon&lt;/td>
+&lt;td>electronic&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>bike_component_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>color&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>family_model_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>family_id&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>#3B82F6&lt;/td>
+&lt;td>8727&lt;/td>
+&lt;td>3088&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>brand_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>quality_score&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>is_mobile&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>currency_id&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>45&lt;/td>
+&lt;td>30&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>seller_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>is_ebike&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>is_frameset&lt;/strong>&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>151982&lt;/td>:w\
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;figcaption>Excerpt of bike feature data&lt;/figcaption>
+&lt;/figure>
+&lt;p>For example, the bike with id 465551, detailed in our bike feature table, has a frame size of 56 and a color code referencing blue.&lt;/p>
+&lt;p>Using euclidean distance between the feature vectors (a concept developed 300BCE), we measure the similarity between bikes in a feature space, ranking them by similarity scores. We found that euclidean distance allows the weighing of features according to their importance over cosine similarity.&lt;/p>
+&lt;p>As Figure 1 demonstrates, the content-based recommendations closely match the featured bike in key features such as components level, price, size, and color. This ensures that even without user input, our recommendations are likely to align with what users might find appealing and within their expected budget and aesthetic preferences.&lt;/p>
+&lt;p>In summary, our content-based filtering leverages a detailed bike feature table to present users with bike suggestions that are similar in price, size, and color, ensuring relevance and potential appeal in every recommendation.&lt;/p>
+&lt;figure>
+&lt;img src="content.jpg" alt="Content Based Similarity">
+&lt;figcaption>Content Based Similarity&lt;/figcaption>
+&lt;/figure>
+&lt;h3 id="collaborative-filtering">Collaborative Filtering&lt;/h3>
+&lt;p>Our collaborative filtering model personalizes bike recommendations by learning from user behaviors like views, add to favorites and purchases. It uses machine learning, stylized in Figure 2, to predict interests from similar users&amp;rsquo; patterns, ensuring relevance.&lt;/p>
+&lt;p>For instance, if User A likes both aero and gravel bikes, we might suggest gravel bikes to User B. She is so far only interested in aero bikes but her similarity to user A suggests that she might be interested in gravel bikes too, introducing novelty and serendipity. This method also diversifies options, preventing monotonous suggestions. Our hybrid approach, based on &lt;a class="link" href="https://arxiv.org/abs/1507.08439" target="_blank" rel="noopener"
+>Kula, 2015&lt;/a>, combines content-based insights with collaborative filtering, offering users a dynamic selection of pre-owned bikes that align with their preferences.&lt;/p>
+&lt;figure>
+&lt;img src="collaborative.jpg" alt="Collaborative Filtering">
+&lt;figcaption>Collaborative Filtering&lt;/figcaption>
+&lt;/figure>
+&lt;p>This model takes into account user-item interactions and extracts latent features to inform its recommendations, incorporating elements of swarm intelligence.&lt;/p>
+&lt;h2 id="evaluating-recommendation-strategies-ab-testing-insights">Evaluating Recommendation Strategies: A/B Testing Insights&lt;/h2>
+&lt;p>In our pursuit to refine recommendation accuracy, we conducted a two-week A/B test, as depicted in Figure 3, to compare the effectiveness of purely content-based filtering against a hybrid approach that combines content-based and collaborative filtering.
+During this trial, we observed user interactions with recommendations generated by both models. The content-based model operated solely on bike features (stable), while the hybrid model also considered user behavior and preferences (canary).&lt;/p>
+&lt;p>The A/B test results were compelling, revealing a 40% increase in conversion rates—from viewing recommendations to placing orders, when the hybrid model was employed over the content-based model alone.
+Figure 3 showcases the A/B test outcomes over the 14-day period, providing clear evidence that integrating collaborative filtering with content-based insights leads to a more engaging and effective recommendation system. This hybrid approach not only aligns with users&amp;rsquo; specific tastes but also introduces them to new bike categories they might not have considered, enhancing the overall user experience.&lt;/p>
+&lt;figure>
+&lt;img src="ab_test_recom.png" alt="A/B Test Results"">
+&lt;figcaption>A/B Test Results&lt;/figcaption>
+&lt;/figure>
+&lt;h2 id="expanding-personalization-through-advanced-applications">Expanding Personalization Through Advanced Applications&lt;/h2>
+&lt;p>buycycle&amp;rsquo;s inaugural machine learning model, our personalization engine, is a cornerstone in our quest to revolutionize the pre-owned bicycle market. It tackles key challenges such as information inefficiencies by delivering personalized bike suggestions, empowering our users to make well-informed decisions. This advancement is a significant stride towards bolstering buycycle&amp;rsquo;s dedication to market efficiency, environmental sustainability, and economic accessibility.&lt;/p>
+&lt;p>As we refine this first model and embrace cutting-edge technologies, we&amp;rsquo;re excited to broaden its use, including personalized email campaigns and real-time personalization through streaming data.&lt;/p>
+&lt;p>These initiatives are just the beginning of our journey into machine learning. We anticipate starting new endeavors and applying our learnings to continuously innovate, keeping us at the vanguard of the marketplace, enriching the user experience, and ensuring equitable access to cycling options.&lt;/p>
+&lt;h2 id="paper">Paper&lt;/h2>
+&lt;embed src="recommendation-2.pdf" type="application/pdf" width="100%" height="600px" /></description></item><item><title>The beauty of open source route planning</title><link>https://rauner.github.io/blog/p/route-planning/</link><pubDate>Mon, 11 Dec 2023 21:10:00 +0700</pubDate><guid>https://rauner.github.io/blog/p/route-planning/</guid><description>&lt;img src="https://rauner.github.io/blog/p/route-planning/cover.jpg" alt="Featured image of post The beauty of open source route planning" />&lt;p>Deciding where to cycle is one of the most important ingredients for a good time on the bike. In the past, for the ideal route, you needed a friend that knew the surrounding roads inside out, or you spent hours studying some map. Today, it&amp;rsquo;s a lot easier: two taps with your finger and we&amp;rsquo;ve got a great starting point to refine the perfect route for your tour.
+And for that it doesn&amp;rsquo;t even matter if we want to make the daily commute to work a little nicer or if we want to spend several days riding through the Alps Bikepacking. So in today&amp;rsquo;s blog post, we&amp;rsquo;ll introduce you to a few of the most helpful route planning tools to make your next cycling adventure even easier to prepare and more enjoyable to experience.
+We will intentionally focus on opensource tools that provide the most customization and provide a way to actively contribute to the tools and underlying maps.&lt;/p>
+&lt;figure>
+&lt;img src="cover.png" alt="Official Cycling routes in OpenStreetMap">
+&lt;figcaption>Official Cycling routes in OpenStreetMap.&lt;/figcaption>
+&lt;/figure>
+&lt;h1 id="openstreetmap">OpenStreetMap&lt;/h1>
+&lt;p>In fact, the vast majority of bike-specific routing solutions, which also take into account important criteria such as preference for elevation changes, road surfaces, or avoiding dangerous roads, are based on OpenStreetMap.
+This platform offers you a free, editable map of the world created by a global community of volunteers. Users can share, edit, and use all kinds of geographic data on OpenStreetMap, so you can find the very last trail, viewpoint, or hidden bike path. Whether in the city or off the beaten path - OpenStreetMap knows every spot. Even bicycle parking and repair stations, which is particularly practical for cyclists. And if it is not there yet, you can add it to the maps database.
+What is clear is that this sheer mass of data and detail could never in a lifetime be collected and continuously updated at this density by a single company. OpenStreetMap is therefore a true boon for route planning, from the Community, for the community.&lt;/p>
+&lt;figure>
+&lt;img src="image1.png" alt="OpenStreetMap Example">
+&lt;figcaption>Surface categories make it easy to tweak surface types.&lt;/figcaption>
+&lt;/figure>
+&lt;h1 id="brouter">BRouter&lt;/h1>
+&lt;p>Planning and riding a great route in general consists of two parts, the planning before and the navigation during your ride.
+BRouter is another open source project (based on OpenStreetMap) that covers the planning phase. And it works both in the app and on the web.
+Here you can find various maps in satellite or topographic view, as well as cycling-specific overlays that give you access to entire libraries of bike trails (including those from waymarked trails saved routes). Additionally, you will also find Gravel-, mountain bike- or road bike routing profiles, which you can even customize to your individual needs in a second step. A great feature is the surface and road type view. Here you can see how much of your ride is the types you prefer and by clicking on them get highlight live on the map, a great tool for refining the route. Once satisfied, you only need to save the map as a gpx file and download it on your navigation device.
+In addition, and this is unfortunately still relatively rare among navigation software, your data is neither shared with third-party providers, nor tracked or stored in any other way. You are also spared from in-app purchases or advertising.
+All this makes BRouter a great tool for planning your next trip, although the rich interface might take some time and effort to get used to.&lt;/p>
+&lt;figure>
+&lt;img src="image2.png" alt="BRouter Interface">
+&lt;figcaption>Road bike minimized traffic routing from Munich over the Stelvio pass to Meran.&lt;/figcaption>
+&lt;/figure>
+&lt;h1 id="osmand">osmAnd&lt;/h1>
+&lt;p>The gpx file from BRrouter can be imported into any navigation device. However, if you just want to use your phone, there are great apps that guide you safely and with ton of additional features. The app osmAnd is one of them and offers two crucial advantages: Bike-specific maps and turn-by-turn voice navigation. For you, this means: Stash your phone in your pocket or mount it on your handlebar and off you go.
+With several available plug-ins you can also connect your favorite weather app, the now familiar BRouter for offline maps, Topography for elevation profiles or even Wikipedia with osmAnd. The latter accesses your location while driving and informs you about surrounding national parks, statues, monuments, cities and&amp;hellip; Well, about pretty much everything, that you cycle past that has a Wikipedia entry. That way you challenge your body and educate yourself at the same time!
+The app is free, but you have to pay extra for a few plugins. Fortunately, this is not absolutely necessary, as the free version already offers (almost) everything you need. Pro tip: The developers want to foster open source and give a free pro version when using the alternative app store F-Driod.
+OpenStreetMap, BRouter and osmAnd are all opensource projects. While their data base is huge and their opensource character makes them great free, democratic and tools that benefit us all, they can be a bit hard to navigate and use. So if you&amp;rsquo;re looking for something a bit more user-experience oriented, these next suggestions might be just right for you!&lt;/p>
+&lt;figure>
+&lt;img src="image3.png" alt="osmAnd App">
+&lt;figcaption>A tour through the Berlin Tiergarten as suggested by osmAnd with the Wikipedia plug-in active.&lt;/figcaption>
+&lt;/figure></description></item><item><title>Image gallery</title><link>https://rauner.github.io/blog/p/image-gallery/</link><pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate><guid>https://rauner.github.io/blog/p/image-gallery/</guid><description>&lt;img src="https://rauner.github.io/blog/p/image-gallery/2.jpg" alt="Featured image of post Image gallery" />&lt;p>Hugo theme Stack supports the creation of interactive image galleries using Markdown. It&amp;rsquo;s powered by &lt;a class="link" href="https://photoswipe.com/" target="_blank" rel="noopener"
+>PhotoSwipe&lt;/a> and its syntax was inspired by &lt;a class="link" href="https://typlog.com/" target="_blank" rel="noopener"
+>Typlog&lt;/a>.&lt;/p>
+&lt;p>To use this feature, the image must be in the same directory as the Markdown file, as it uses Hugo&amp;rsquo;s page bundle feature to read the dimensions of the image. &lt;strong>External images are not supported.&lt;/strong>&lt;/p>
+&lt;h2 id="syntax">Syntax&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">![&lt;span class="nt">Image 1&lt;/span>](&lt;span class="na">1.jpg&lt;/span>) ![&lt;span class="nt">Image 2&lt;/span>](&lt;span class="na">2.jpg&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="result">Result&lt;/h2>
+&lt;p>&lt;img src="https://rauner.github.io/blog/blog/p/image-gallery/1.jpg"
+width="2000"
+height="1400"
+srcset="https://rauner.github.io/blog/blog/p/image-gallery/1_hudd2e8259c20ed0dcaa856c253552e90f_14625_480x0_resize_q75_box.jpg 480w, https://rauner.github.io/blog/blog/p/image-gallery/1_hudd2e8259c20ed0dcaa856c253552e90f_14625_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Image 1"
+class="gallery-image"
+data-flex-grow="142"
+data-flex-basis="342px"
+> &lt;img src="https://rauner.github.io/blog/blog/p/image-gallery/2.jpg"
+width="1500"
+height="2250"
+srcset="https://rauner.github.io/blog/blog/p/image-gallery/2_hubce42636ecacc1a380b462f3110efcec_37455_480x0_resize_q75_box.jpg 480w, https://rauner.github.io/blog/blog/p/image-gallery/2_hubce42636ecacc1a380b462f3110efcec_37455_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Image 2"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+>&lt;/p>
+&lt;blockquote>
+&lt;p>Photo by &lt;a class="link" href="https://unsplash.com/@mymind" target="_blank" rel="noopener"
+>mymind&lt;/a> and &lt;a class="link" href="https://unsplash.com/@lukechesser" target="_blank" rel="noopener"
+>Luke Chesser&lt;/a> on &lt;a class="link" href="https://unsplash.com/" target="_blank" rel="noopener"
+>Unsplash&lt;/a>&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

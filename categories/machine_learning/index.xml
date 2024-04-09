@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine_Learning on Sebastian Rauner</title><link>https://rauner.github.io/blog/categories/machine_learning/</link><description>Recent content in Machine_Learning on Sebastian Rauner</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 12 Dec 2023 21:10:00 +0700</lastBuildDate><atom:link href="https://rauner.github.io/blog/categories/machine_learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Navigating the Pre-Owned Bike Market</title><link>https://rauner.github.io/blog/p/recommendation/</link><pubDate>Tue, 12 Dec 2023 21:10:00 +0700</pubDate><guid>https://rauner.github.io/blog/p/recommendation/</guid><description>&lt;img src="https://rauner.github.io/blog/p/recommendation/cover.png" alt="Featured image of post Navigating the Pre-Owned Bike Market" />&lt;p>buycycle emerges as a transformative platform in the pre-owned bicycle market. A market hindered before by high transaction costs that deterred customers from considering used bikes over buying new. These costs, ranging from complex cross-border shipping to concerns over buyer and seller trust and prevalent information inefficiencies, are now being mitigated through buycycle&amp;rsquo;s comprehensive service offerings.&lt;/p>
+&lt;p>By centralizing services such as streamlined international shipping, secure escrow payment systems, and robust insurance options, buycycle aims at reducing the barriers to buying and selling pre-owned bikes. This not only elevates the value proposition of second-hand bicycles but also enhances market efficiency, making pre-owned options more competitive against new purchases.&lt;/p>
+&lt;p>Environmental benefits are inherent in our business model, promoting bicycle reuse, reducing CO2 emissions, and supporting sustainable consumption. Economically, buycycle enables more affordable cycling options, fostering broader adoption and healthier lifestyles while lessening dependence on costlier transport.&lt;/p>
+&lt;p>One key tool to achieve this is through Democratizing Bike Market Information, providing detailed bike insights to inform buyers and sellers alike.&lt;/p>
+&lt;h2 id="democratizing-bike-market-information">Democratizing Bike Market Information&lt;/h2>
+&lt;p>A core mission of buycycle is to establish a level playing field by ensuring all market participants have access to comprehensive and symmetrical information. To this end, we offer a detailed buyers guide to empower consumers, provide precise bicycle valuations, and facilitate the connection between buyers and sellers by aligning the right bikes with user preferences. Achieving such transparency is made possible through our commitment to data-driven services, which forms the cornerstone of the buycycle platform.&lt;/p>
+&lt;p>Personalization emerges as a natural progression in our quest to democratize market information. By leveraging the power of machine learning, we aim to curate a tailored experience for each user, ensuring that the wealth of information available is not only accessible but also actionable. This focus on personalization is not just about enhancing user experience—it&amp;rsquo;s about transforming data into meaningful interactions that resonate with the individual needs and desires of our customers.&lt;/p>
+&lt;p>It is with this vision in mind that our data science team embarked on the development of our inaugural in-house machine learning model.&lt;/p>
+&lt;h2 id="data-driven-personalization">Data-Driven Personalization&lt;/h2>
+&lt;p>Imagine a user overwhelmed by the choice of 20,000 bikes on sale. They need assistance in finding the perfect fit, which may not always be readily available due to the nature of pre-owned stock. The recommendation system is tailored to help users navigate this vast selection effectively. On the other hand we need to ensure if the exact bike a user wants isn&amp;rsquo;t in stock, they won&amp;rsquo;t leave the platform empty-handed. Instead, they&amp;rsquo;ll be presented with a curated selection of alternatives that meet their needs and preferences, making the shopping experience personalized and efficient.&lt;/p>
+&lt;p>The recommendation system is designed to address four key aspects:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Relevance:&lt;/strong> Ensuring that the bikes recommended meet the user&amp;rsquo;s specific needs and preferences.&lt;/li>
+&lt;li>&lt;strong>Novelty:&lt;/strong> Introducing users to bikes they may not have previously considered or known about.&lt;/li>
+&lt;li>&lt;strong>Serendipity:&lt;/strong> Surprising users with bikes that they might find unexpectedly appealing.&lt;/li>
+&lt;li>&lt;strong>Diversity:&lt;/strong> Offering a wide range of bikes to prevent redundancy in recommendations.&lt;/li>
+&lt;/ul>
+&lt;h2 id="personalization-engine">Personalization Engine&lt;/h2>
+&lt;p>buycycle&amp;rsquo;s Personalization engine employs a two-tiered approach to cater to users with varying levels of historic feedback data.&lt;/p>
+&lt;p>The first tier is a content-based model that suggests bikes based on specific attributes such as type, size, and brand, ideal for users with clear preferences or limited interaction history.&lt;/p>
+&lt;p>The second tier utilizes collaborative filtering, which leverages user behavior and feedback to refine recommendations. This model identifies patterns in user interactions to suggest bikes that similar users have shown interest in, enhancing personalization as more data becomes available.&lt;/p>
+&lt;p>Our system is built as a Flask app, hosted on Kubernetes for scalability and managed with ArgoCD for continuous deployment, ensuring reliability and up-to-date functionality.
+For a deeper look into our system, visit our &lt;a class="link" href="#repository-section" >Repository&lt;/a> section.&lt;/p>
+&lt;h3 id="repository-section">Repository&lt;/h3>
+&lt;div class="article-list--compact links">
+&lt;article>
+&lt;a href="https://github.com/buycycle/Personalization_Engine" target="_blank" rel="noopener">
+&lt;div class="article-details">
+&lt;h2 class="article-title">Personalization Engine&lt;/h2>
+&lt;footer class="article-time">Repo&lt;/footer>
+&lt;/div>
+&lt;div class="article-image">
+&lt;img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" loading="lazy" alt="GitHub Logo">
+&lt;/div>
+&lt;/a>
+&lt;/article>
+&lt;/div>
+&lt;h3 id="content-based">Content-Based&lt;/h3>
+&lt;p>Our Personalization engine&amp;rsquo;s content-based filtering is designed to suggest bikes based on their features, independent of user history. This is crucial when user preferences are unknown, focusing instead on the attributes of the bikes as shown in Figure 1. The model compares bikes&amp;rsquo; characteristics, such as brand, frame size, brake type, and color, to identify similar options.&lt;/p>
+&lt;figure>
+&lt;table>
+&lt;tr>
+&lt;th>&lt;strong>id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>template_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>price&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>msrp&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>35551&lt;/td>
+&lt;td>18128&lt;/td>
+&lt;td>3400.0&lt;/td>
+&lt;td>5800.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>bike_created_at_year&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>bike_created_at_month&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>bike_year&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>sales_country_id&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>2023&lt;/td>
+&lt;td>11&lt;/td>
+&lt;td>2021&lt;/td>
+&lt;td>137&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>bike_type_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>bike_category_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>mileage_code&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>motor&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>3000_10000&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>city&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>condition_code&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>frame_size&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>rider_height_min&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>Berlin&lt;/td>
+&lt;td>3.0&lt;/td>
+&lt;td>56&lt;/td>
+&lt;td>173.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>rider_height_max&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>brake_type_code&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>frame_material_code&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>shifting_code&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>183.0&lt;/td>
+&lt;td>hydraulic&lt;/td>
+&lt;td>carbon&lt;/td>
+&lt;td>electronic&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>bike_component_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>color&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>family_model_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>family_id&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>#3B82F6&lt;/td>
+&lt;td>8727&lt;/td>
+&lt;td>3088&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>brand_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>quality_score&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>is_mobile&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>currency_id&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>45&lt;/td>
+&lt;td>30&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;th>&lt;strong>seller_id&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>is_ebike&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>is_frameset&lt;/strong>&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;tr>
+&lt;td>151982&lt;/td>:w\
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/table>
+&lt;figcaption>Excerpt of bike feature data&lt;/figcaption>
+&lt;/figure>
+&lt;p>For example, the bike with id 465551, detailed in our bike feature table, has a frame size of 56 and a color code referencing blue.&lt;/p>
+&lt;p>Using euclidean distance between the feature vectors (a concept developed 300BCE), we measure the similarity between bikes in a feature space, ranking them by similarity scores. We found that euclidean distance allows the weighing of features according to their importance over cosine similarity.&lt;/p>
+&lt;p>As Figure 1 demonstrates, the content-based recommendations closely match the featured bike in key features such as components level, price, size, and color. This ensures that even without user input, our recommendations are likely to align with what users might find appealing and within their expected budget and aesthetic preferences.&lt;/p>
+&lt;p>In summary, our content-based filtering leverages a detailed bike feature table to present users with bike suggestions that are similar in price, size, and color, ensuring relevance and potential appeal in every recommendation.&lt;/p>
+&lt;figure>
+&lt;img src="content.jpg" alt="Content Based Similarity">
+&lt;figcaption>Content Based Similarity&lt;/figcaption>
+&lt;/figure>
+&lt;h3 id="collaborative-filtering">Collaborative Filtering&lt;/h3>
+&lt;p>Our collaborative filtering model personalizes bike recommendations by learning from user behaviors like views, add to favorites and purchases. It uses machine learning, stylized in Figure 2, to predict interests from similar users&amp;rsquo; patterns, ensuring relevance.&lt;/p>
+&lt;p>For instance, if User A likes both aero and gravel bikes, we might suggest gravel bikes to User B. She is so far only interested in aero bikes but her similarity to user A suggests that she might be interested in gravel bikes too, introducing novelty and serendipity. This method also diversifies options, preventing monotonous suggestions. Our hybrid approach, based on &lt;a class="link" href="https://arxiv.org/abs/1507.08439" target="_blank" rel="noopener"
+>Kula, 2015&lt;/a>, combines content-based insights with collaborative filtering, offering users a dynamic selection of pre-owned bikes that align with their preferences.&lt;/p>
+&lt;figure>
+&lt;img src="collaborative.jpg" alt="Collaborative Filtering">
+&lt;figcaption>Collaborative Filtering&lt;/figcaption>
+&lt;/figure>
+&lt;p>This model takes into account user-item interactions and extracts latent features to inform its recommendations, incorporating elements of swarm intelligence.&lt;/p>
+&lt;h2 id="evaluating-recommendation-strategies-ab-testing-insights">Evaluating Recommendation Strategies: A/B Testing Insights&lt;/h2>
+&lt;p>In our pursuit to refine recommendation accuracy, we conducted a two-week A/B test, as depicted in Figure 3, to compare the effectiveness of purely content-based filtering against a hybrid approach that combines content-based and collaborative filtering.
+During this trial, we observed user interactions with recommendations generated by both models. The content-based model operated solely on bike features (stable), while the hybrid model also considered user behavior and preferences (canary).&lt;/p>
+&lt;p>The A/B test results were compelling, revealing a 40% increase in conversion rates—from viewing recommendations to placing orders, when the hybrid model was employed over the content-based model alone.
+Figure 3 showcases the A/B test outcomes over the 14-day period, providing clear evidence that integrating collaborative filtering with content-based insights leads to a more engaging and effective recommendation system. This hybrid approach not only aligns with users&amp;rsquo; specific tastes but also introduces them to new bike categories they might not have considered, enhancing the overall user experience.&lt;/p>
+&lt;figure>
+&lt;img src="ab_test_recom.png" alt="A/B Test Results"">
+&lt;figcaption>A/B Test Results&lt;/figcaption>
+&lt;/figure>
+&lt;h2 id="expanding-personalization-through-advanced-applications">Expanding Personalization Through Advanced Applications&lt;/h2>
+&lt;p>buycycle&amp;rsquo;s inaugural machine learning model, our personalization engine, is a cornerstone in our quest to revolutionize the pre-owned bicycle market. It tackles key challenges such as information inefficiencies by delivering personalized bike suggestions, empowering our users to make well-informed decisions. This advancement is a significant stride towards bolstering buycycle&amp;rsquo;s dedication to market efficiency, environmental sustainability, and economic accessibility.&lt;/p>
+&lt;p>As we refine this first model and embrace cutting-edge technologies, we&amp;rsquo;re excited to broaden its use, including personalized email campaigns and real-time personalization through streaming data.&lt;/p>
+&lt;p>These initiatives are just the beginning of our journey into machine learning. We anticipate starting new endeavors and applying our learnings to continuously innovate, keeping us at the vanguard of the marketplace, enriching the user experience, and ensuring equitable access to cycling options.&lt;/p>
+&lt;h2 id="paper">Paper&lt;/h2>
+&lt;embed src="recommendation-2.pdf" type="application/pdf" width="100%" height="600px" /></description></item></channel></rss>

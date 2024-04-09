@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Assistant on Sebastian Rauner</title><link>https://rauner.github.io/blog/tags/assistant/</link><description>Recent content in Assistant on Sebastian Rauner</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 21 Mar 2024 00:00:00 +0700</lastBuildDate><atom:link href="https://rauner.github.io/blog/tags/assistant/index.xml" rel="self" type="application/rss+xml"/><item><title>buycycle's Inventory and and Help Article Aware Assistant</title><link>https://rauner.github.io/blog/p/buycycle-assistant/</link><pubDate>Thu, 21 Mar 2024 00:00:00 +0700</pubDate><guid>https://rauner.github.io/blog/p/buycycle-assistant/</guid><description>&lt;img src="https://rauner.github.io/blog/p/buycycle-assistant/cover.png" alt="Featured image of post buycycle's Inventory and and Help Article Aware Assistant" />&lt;h1 id="crafting-a-multilingual-inventory-and-and-help-article-aware-assistant-with-rust-and-chatgpt">Crafting a Multilingual, Inventory and and Help Article Aware Assistant with Rust and ChatGPT&lt;/h1>
+&lt;p>One of buycycle&amp;rsquo;s missions is to guide our users to find the best bike fitting their needs and preferences. In the rapidly evolving world of e-commerce, providing personalized and efficient customer support is crucial. To takle both goals, we develop a inventory aware assistant, pretrained on the intricacies of the platform and customer support best practices.&lt;/p>
+&lt;h2 id="simplified-fullstack-development-with-rust-and-htmx">Simplified Fullstack Development with Rust and htmx&lt;/h2>
+&lt;p>The development of the assistant&amp;rsquo;s frontend was greatly simplified by the use of Rust and Axum, along with htmx. Rust&amp;rsquo;s safety and performance, combined with Axum&amp;rsquo;s modularity, provided a strong foundation for building a robust backend. htmx&amp;rsquo;s ability to handle dynamic content updates made creating a responsive and interactive user interface a matter of hours rather than days. This synergy allowed us to focus on delivering a product that not only performs well but is also straightforward and enjoyable to develop and maintain.&lt;/p>
+&lt;h2 id="integration-with-chatgpt">Integration with ChatGPT&lt;/h2>
+&lt;p>OpenAI&amp;rsquo;s ChatGPT enhances our assistant with advanced natural language processing. It understands and generates responses in multiple languages, ensuring that users can interact in their preferred language. This integration allows the assistant to provide nuanced and contextually relevant support, drawing from a vast knowledge base of cycling information.
+Additonally, the API supports tools like Code Interpreter, Retrieval, and Function calling, which can be explored using the Assistants playground or by following a step-by-step integration guide.
+Our assitant is implemented as a typical integration of the API:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Create an Assistant&lt;/strong>: Define custom instructions and choose a model for your Assistant. Optionally, add files and enable tools like Code Interpreter, Retrieval, and Function calling.&lt;/li>
+&lt;li>&lt;strong>Create a Thread&lt;/strong>: Start a conversation thread when a user begins interacting with your Assistant.&lt;/li>
+&lt;li>&lt;strong>Add Messages to the Thread&lt;/strong>: As the user asks questions, add their messages to the thread.&lt;/li>
+&lt;li>&lt;strong>Run the Assistant on the Thread&lt;/strong>: Generate a response by calling the model and the tools associated with the Assistant.
+For a more detailed explanation of each step and additional features such as streaming, you can refer to the official OpenAI documentation on the Assistants API &lt;a class="link" href="https://platform.openai.com/docs/assistants/overview?context=with-streaming" target="_blank" rel="noopener"
+>here&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="inventory-and-help-article-awareness">Inventory and Help Article Awareness&lt;/h2>
+&lt;p>The assistant is designed to be fully aware of buycycle&amp;rsquo;s inventory and help articles. It periodically queries the DB and attaches these files to the assitant to provide real-time, accurate information to users. Whether a customer is looking for a specific type of bike or needs guidance on using the platform, the assistant can pull the relevant data and offer tailored assistance.&lt;/p>
+&lt;h2 id="how-the-assistant-works">How the Assistant Works&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Multilingual Support&lt;/strong>: The assistant can converse with users in multiple languages, offering a personalized experience to a global audience.&lt;/li>
+&lt;li>&lt;strong>Inventory Awareness&lt;/strong>: By making the inventory DB availbable to the assistant, it can recommend bikes from buycycle&amp;rsquo;s inventory that match the user&amp;rsquo;s preferences for category, budget, body height, and color.&lt;/li>
+&lt;li>&lt;strong>Content Awareness&lt;/strong>: The assistant ingestes our multi-lingual zen desk help articles to answer questions about the platform and the buying and selling process. If a query falls outside the scope of the help articles, the assistant directs users to buycycle&amp;rsquo;s contact page for further support.&lt;/li>
+&lt;/ol>
+&lt;h2 id="implementation-highlights">Implementation Highlights&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Scalable Backend&lt;/strong>: Built with Axum, the assistant benefits from a robust and modular web framework that scales effortlessly with demand.&lt;/li>
+&lt;li>&lt;strong>Dynamic Frontend&lt;/strong>: The use of htmx on the frontend ensures a dynamic and responsive user interface, with seamless partial page updates and asynchronous form submissions.&lt;/li>
+&lt;li>&lt;strong>Database Integration&lt;/strong>: SQLite is used for storing conversation history, providing a lightweight and fast solution for data management.&lt;/li>
+&lt;/ul>
+&lt;h2 id="lessons-learned">Lessons Learned&lt;/h2>
+&lt;p>During the development of the buycycle Assistant, two key lessons were learned:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Structured Data Queries&lt;/strong>: Providing the assistant with specific Python code to query the database and help articles ensures consistent and accurate information retrieval. This approach prevents the assistant from misinterpreting the data, leading to a more reliable user experience.&lt;/li>
+&lt;li>&lt;strong>Dynamic File Referencing&lt;/strong>: Dynamically referencing file resources with their respective file-ids after attaching them to the assistant is essential. This method guarantees that the assistant recognizes and utilizes the correct sources, maintaining the integrity of the information provided.&lt;/li>
+&lt;/ol>
+&lt;h2 id="showcasing-main-capabilities">Showcasing Main Capabilities&lt;/h2>
+&lt;p>The assistant&amp;rsquo;s two main capabilities are showcased in the following images:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Inventory Awareness&lt;/strong>: The assistant can recommend bikes from the inventory that match the user&amp;rsquo;s preferences.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://rauner.github.io/blog/blog/p/buycycle-assistant/bike_recom.png"
+width="545"
+height="1198"
+srcset="https://rauner.github.io/blog/blog/p/buycycle-assistant/bike_recom_hubb250f6d1dc0b6e46f2b5bcc8876d036_150562_480x0_resize_box_3.png 480w, https://rauner.github.io/blog/blog/p/buycycle-assistant/bike_recom_hubb250f6d1dc0b6e46f2b5bcc8876d036_150562_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Bike Recommendations"
+class="gallery-image"
+data-flex-grow="45"
+data-flex-basis="109px"
+>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Help Article Awareness&lt;/strong>: The assistant can not reference to help articles links but provide information in the chat to assist users with their queries about the website and the buying and selling process.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://rauner.github.io/blog/blog/p/buycycle-assistant/article_awareness.png"
+width="484"
+height="907"
+srcset="https://rauner.github.io/blog/blog/p/buycycle-assistant/article_awareness_huc60f91ee6d2760e73c447b0de6950f19_119068_480x0_resize_box_3.png 480w, https://rauner.github.io/blog/blog/p/buycycle-assistant/article_awareness_huc60f91ee6d2760e73c447b0de6950f19_119068_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Help Article Awareness"
+class="gallery-image"
+data-flex-grow="53"
+data-flex-basis="128px"
+>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Multilingual Support&lt;/strong>: The assistant can assist users in all languages currently relevant for buycycle.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://rauner.github.io/blog/blog/p/buycycle-assistant/multi.png"
+width="482"
+height="747"
+srcset="https://rauner.github.io/blog/blog/p/buycycle-assistant/multi_hu93892d7aa1b670935aa8e34fef1256e5_102740_480x0_resize_box_3.png 480w, https://rauner.github.io/blog/blog/p/buycycle-assistant/multi_hu93892d7aa1b670935aa8e34fef1256e5_102740_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Multilingual Capabilities and Help Article Awareness"
+class="gallery-image"
+data-flex-grow="64"
+data-flex-basis="154px"
+>&lt;/p>
+&lt;h2 id="setting-up-the-assistant">Setting Up the Assistant&lt;/h2>
+&lt;p>Developers can set up the assistant with ease, thanks to Rust&amp;rsquo;s package manager and a straightforward &lt;code>.env&lt;/code> file for environment variables. The assistant is also containerized with Docker, offering a consistent development and deployment environment.&lt;/p>
+&lt;h2 id="experience-the-assistant-live">Experience the Assistant Live&lt;/h2>
+&lt;p>We invite you to experience the buycycle Assistant firsthand by visiting the live version at &lt;a class="link" href="https://assistant.buycycle.com/" target="_blank" rel="noopener"
+>assistant.buycycle.com&lt;/a>. Engage with the assistant and discover how it can enhance your journey through our platform, whether you&amp;rsquo;re looking to buy a pre-owned high-end sport bike or seeking assistance with our services.&lt;/p>
+&lt;h2 id="outlook-connecting-to-data-science-products">Outlook: Connecting to Data Science Products&lt;/h2>
+&lt;p>Looking ahead, buycycle plans to expand the capabilities of our assistant by connecting it to other Data Science products, such as personalized bike recommendations. This integration will leverage user data and machine learning models to further refine the assistant&amp;rsquo;s ability to provide customized suggestions, enhancing the personal touch that buycycle is known for.&lt;/p>
+&lt;h2 id="repository-section">Repository&lt;/h2>
+&lt;div class="article-list--compact links">
+&lt;article>
+&lt;a href="https://github.com/buycycle/assistant" target="_blank" rel="noopener">
+&lt;div class="article-details">
+&lt;h2 class="article-title">buycycle Assistant Repository&lt;/h2>
+&lt;footer class="article-time">Repo&lt;/footer>
+&lt;/div>
+&lt;div class="article-image">
+&lt;img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" loading="lazy" alt="GitHub Logo">
+&lt;/div>
+&lt;/a>
+&lt;/article>
+&lt;/div></description></item></channel></rss>
